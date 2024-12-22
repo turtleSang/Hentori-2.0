@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #8f714b;
+  --foreground: #5a4633;
+  --highlight: #d4c1a3;
+  --border: #b8860b;
+  --text: #f5f5f5;
+  --textBlack: #2e1108;
+  --textLogo: #c4ab5a;
+  --textGreen: #2b3e5c;
+}
+body {
+  color: var(--text);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}

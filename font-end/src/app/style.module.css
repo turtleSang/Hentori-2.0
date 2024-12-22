@@ -1,0 +1,54 @@
+.fadeIn1 {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-direction: inherit;
+}
+
+.fadeIn2 {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 200ms;
+  animation-direction: inherit;
+}
+
+.fadeIn3 {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 300ms;
+  animation-direction: inherit;
+}
+
+.backgroundIntro {
+  background-image: url("/introduction/intro-1.jpg");
+  background-position: center;
+  background-size: cover;
+
+  background-attachment: fixed;
+}
+
+.backgroundGradient {
+  background: rgb(18, 10, 1);
+  background: radial-gradient(
+    circle,
+    rgba(18, 10, 1, 0.5663515406162465) 0%,
+    rgba(0, 0, 0, 0.756827731092437) 100%
+  );
+}
+
+.backgroundIntroProduct {
+  background-image: url("/intro-product/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
