@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { LISTlINK, LISTSOCIAL } from "@/libs/constance";
+import { LISTLINK, LISTSOCIAL } from "@/libs/constance";
 
 import clsx from "clsx";
 import { useEffect, useState } from "react";
@@ -20,7 +20,9 @@ export default function NavMenu() {
 
   useEffect(() => {
     let path: string = window.location.pathname;
-    setActiveLink(path);
+    let newPath = "/" + path.split("/")[1];
+
+    setActiveLink(newPath ? newPath : "/");
   }, []);
 
   return (
@@ -61,9 +63,10 @@ export default function NavMenu() {
         )}
         onClick={() => setActiveNav(false)}
       >
-        {LISTlINK.map((val, index) => {
+        {LISTLINK.map((val, index) => {
           return (
             <Link
+              replace={true}
               href={val.link}
               key={index}
               className={clsx(

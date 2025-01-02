@@ -1,29 +1,29 @@
-import { faSquareFacebook, faInstagram, faFacebookMessenger, } from "@fortawesome/free-brands-svg-icons";
-import { ItemIntro, LinkInfo, TypeLinkFooter } from "./defination";
-import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faMessage } from "@fortawesome/free-regular-svg-icons";
+import { faSquareFacebook, faInstagram, faFacebookMessenger, IconDefinition, } from "@fortawesome/free-brands-svg-icons";
+import { ItemIntro, LinkInfo, TypeLinkFooter, TypeProduct, TypeSort } from "./defination";
+import { faLocationDot, faPhone, faArrowUpShortWide, faArrowUpWideShort } from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
 
-export const LISTlINK: LinkInfo[] = [
+export const LISTLINK: LinkInfo[] = [
     {
         name: 'Trang Chủ',
         link: '/'
     },
     {
         name: "Khách hàng",
-        link: "khach-hang"
+        link: "/khach-hang"
     },
     {
         name: 'Sản Phẩm',
-        link: 'san-pham'
+        link: '/san-pham'
     },
     {
         name: 'Khuyến Mãi',
-        link: 'khuyen-mai'
+        link: '/khuyen-mai'
     },
     {
         name: 'Liên Hệ',
-        link: 'lien-he'
+        link: '/lien-he'
     },
 ]
 
@@ -49,42 +49,78 @@ export const LISTINTROPRODUCT: ItemIntro[] = [
         name: "Suit",
         linkImg: "/intro-product/suit.jpg",
         alt: "Suit tại Hentori Bespoke",
-        introLink: "/san-pham/suit"
+        introLink: "/san-pham/suit",
+        typeProduct: TypeProduct.Suit
     },
     {
         name: "Áo sơ mi",
         linkImg: "/intro-product/ao-so-mi.jpg",
         alt: "Áo sơ mi tại Hentori Bespoke",
-        introLink: "/san-pham/so-mi"
+        introLink: "/san-pham/so-mi",
+        typeProduct: TypeProduct.SoMi
     },
     {
         name: "Quần tây",
         linkImg: "/intro-product/quan-tay.jpg",
         alt: "Quần tây tại Hentori Bespoke",
-        introLink: "/san-pham/quan-tay"
+        introLink: "/san-pham/quan-tay",
+        typeProduct: TypeProduct.QuanTay
     },
     {
         name: "Phụ Kiện",
         linkImg: "/intro-product/phu-kien.jpg",
         alt: "Phụ kiện tại Hentori Bespoke",
-        introLink: "/san-pha,/phu-kien"
+        introLink: "/san-pham/phu-kien",
+        typeProduct: TypeProduct.PhuKien
     }
 ]
 
-export const dataCustomer: string[] = [
-    "/customers/customers-1.jpg",
-    "/customers/customers-2.jpg",
-    "/customers/customers-3.jpg",
-    "/customers/customers-4.jpg",
-    "/customers/customers-5.jpg",
-    "/customers/customers-6.jpg",
-    "/customers/customers-7.jpg",
-    "/customers/customers-8.jpg",
+export const dataCustomer: { name: string, link: string }[] = [
+    {
+        link: "/customers/customers-1.jpg",
+        name: "Tuxedo"
+    },
+    {
+        link: "/customers/customers-2.jpg",
+        name: "Suit"
+    },
+    {
+        link: "/customers/customers-3.jpg",
+        name: "Suit 2 Mảnh"
+    },
+    {
+        link: "/customers/customers-4.jpg",
+        name: "Tuxedo"
+    },
+    {
+        link: "/customers/customers-5.jpg",
+        name: "Suit"
+    },
+    {
+        link: "/customers/customers-6.jpg",
+        name: "Suit 2 Mảnh"
+    },
+    {
+        link: "/customers/customers-7.jpg",
+        name: "Tuxedo"
+    },
+    {
+        link: "/customers/customers-8.jpg",
+        name: "Suit"
+    },
+    {
+        link: "/customers/customers-9.jpg",
+        name: "Suit"
+    },
+    {
+        link: "/customers/customers-10.jpg",
+        name: "Suit"
+    }
 ]
 
 const listLinkProduct = (): { name: string, link: string }[] => {
     return LISTINTROPRODUCT.map((val) => {
-        return { name: val.name, link: val.name }
+        return { name: val.name, link: val.introLink }
     })
 }
 const listLinkSocial = (): { name: string, link: string }[] => {
@@ -125,8 +161,8 @@ export const ListLinkFooter: TypeLinkFooter[] = [
 ]
 
 
-export const LISTCUSTOMER = (): Promise<string[]> => {
-    return new Promise((resolve, reject) => {
+export const LISTCUSTOMER = (): Promise<{ name: string, link: string }[]> => {
+    return new Promise((resolve) => {
         setTimeout(() => {
             resolve(dataCustomer)
         }, 500);
@@ -155,3 +191,21 @@ export const infoLink = [
     },
 
 ];
+
+export const GroupShort: { name: string, type: TypeSort, icon: IconDefinition }[] = [
+    {
+        name: "Sản phẩm nổi bật",
+        type: TypeSort.HightLight,
+        icon: faLightbulb
+    },
+    {
+        name: "Sắp xếp theo giá giảm",
+        type: TypeSort.PriceHighToLow,
+        icon: faArrowUpShortWide
+    },
+    {
+        name: "Sắp xếp theo giá tăng",
+        type: TypeSort.PriceLowToHigh,
+        icon: faArrowUpWideShort
+    }
+]  
