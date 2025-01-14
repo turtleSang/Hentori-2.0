@@ -29,11 +29,7 @@
 
 .backgroundGradient {
   background: rgb(18, 10, 1);
-  background: radial-gradient(
-    circle,
-    rgba(18, 10, 1, 0.5663515406162465) 0%,
-    rgba(0, 0, 0, 0.756827731092437) 100%
-  );
+  background: radial-gradient(circle, rgba(18, 10, 1, 0.5663515406162465) 0%, rgba(0, 0, 0, 0.756827731092437) 100%);
 }
 
 .backgroundIntroProduct {

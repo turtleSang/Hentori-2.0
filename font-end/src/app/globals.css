@@ -18,3 +18,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
+
+/* Custome swiper */
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-navigation-color: var(--background);
+}
+
+.mySwiper .swiper-slide {
+  filter: brightness(0.5);
+  transition-duration: 200ms;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  filter: brightness(1);
+}

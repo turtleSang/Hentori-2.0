@@ -3,7 +3,7 @@ import { DataProduct, TypeProduct, TypeSort } from "@/libs/defination";
 import GroupBtnShort from "./group-btn-short";
 import { useEffect, useState } from "react";
 import ProductItem from "./product-item";
-import { DataProductFake, useProductFake } from "@/hook/fetch-fake-data";
+import { DataProductFake, useProductFake } from "@/hook/fetch-data-client";
 import GroupProductItemSkeleton from "./skeleton/group-product-skeleton";
 
 export default function GroupListProduct({

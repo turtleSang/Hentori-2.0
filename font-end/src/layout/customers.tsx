@@ -1,10 +1,8 @@
 "use client";
-import Title from "@/components/title";
 import clsx from "clsx";
 import Link from "next/link";
 import { garamaod } from "@/app/fonts/font";
 import Content from "@/components/content";
-import { useInView, useSpring, animated } from "@react-spring/web";
 import { CustomerContent } from "@/libs/content";
 import ImageCustomers from "@/components/image-customers";
 import { use } from "react";
@@ -19,8 +17,10 @@ export default function Customers({
   return (
     <div className="flex flex-col md:flex-row-reverse bg-colorTextBlack items-center py-12 md:py-0">
       <div className={clsx(garamaod.className, "w-full md:w-1/2")}>
-        <Title title={CustomerContent.title} />
-        <Content content={CustomerContent.content} />
+        <Content
+          title={CustomerContent.title}
+          content={CustomerContent.content}
+        />
       </div>
       <Link
         href="/khach-hang"

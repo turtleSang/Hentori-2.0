@@ -1,4 +1,3 @@
-import Title from "@/components/title";
 import clsx from "clsx";
 import { garamaod } from "@/app/fonts/font";
 import Content from "@/components/content";
@@ -16,8 +15,7 @@ export default function CustomerCarousel() {
       )}
     >
       <div>
-        <Title title={titleName} />
-        <Content content={content} />
+        <Content title={titleName} content={content} />
       </div>
     </div>
   );

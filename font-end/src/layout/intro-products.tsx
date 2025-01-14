@@ -1,18 +1,15 @@
-"use client";
-import IntroItem from "@/components/intro-item";
+import IntroItem from "@/components/category";
 import { LISTINTROPRODUCT } from "@/libs/constance";
 import Style from "@/app/style.module.css";
 import { garamaod } from "@/app/fonts/font";
 import clsx from "clsx";
-import { animated, useInView, useSprings } from "@react-spring/web";
-import { useEffect } from "react";
-import Title from "@/components/title";
+import { Suspense } from "react";
 import Content from "@/components/content";
+import { getCategory } from "@/hook/fetch-data-server";
+import GroupIntroProduct from "@/components/group-intro-product";
 
 export default function IntroProduct() {
-  const [ref, inView] = useInView({
-    rootMargin: "-40%",
-  });
+  const listCategory = getCategory();
   const title = "SẢN PHẨM CỦA CHÚNG TÔI";
   const content = `Sản phẩm bespoke cao cấp là sự kết hợp hoàn hảo giữa nghệ thuật thủ
           công tinh tế và phong cách cá nhân hóa. Mỗi chi tiết đều được chế tác
@@ -22,21 +19,11 @@ export default function IntroProduct() {
 
   return (
     <div className={clsx(Style.backgroundIntroProduct, garamaod.className)}>
-      <animated.div
-        ref={ref}
-        className={clsx(
-          "py-12 bg-black bg-opacity-70 duration-500",
-          inView ? "opacity-100" : "opacity-0"
-        )}
-      >
-        <Title title={title} />
-        <Content content={content} />
-        <div className="flex flex-col justify-around items-center md:flex-row">
-          {LISTINTROPRODUCT.map((val, index) => (
-            <IntroItem introItem={val} key={index} />
-          ))}
-        </div>
-      </animated.div>
+      <Content title={title} content={content} />
+
+      <Suspense fallback={<>Loading......</>}>
+        <GroupIntroProduct listCategory={listCategory} />
+      </Suspense>
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default async function Page({
   return (
     <div>
       <ProductNav typeProduct={typeProduct} />
-      <GroupListProduct typeProduct={typeProduct} />;
+      <GroupListProduct typeProduct={typeProduct} />
     </div>
   );
 }

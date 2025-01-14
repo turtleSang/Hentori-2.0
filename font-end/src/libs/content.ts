@@ -11,3 +11,4 @@ export const CustomerContent = {
 }
 
 export const FooterIntro = "Hentori Bespoke mang đến trải nghiệm thời trang đẳng cấp với các thiết kế may đo tinh xảo, được cá nhân hóa hoàn toàn. Chúng tôi tôn vinh phong cách riêng biệt, sự sang trọng và tinh thần hoàn mỹ trong từng sản phẩm."
+
