@@ -1,5 +1,5 @@
 import { DataProduct } from "@/libs/defination";
-import { FormatNumber } from "@/libs/function";
+import { FormatNumber } from "@/libs/helper";
 import Image from "next/image";
 import Link from "next/link";
 

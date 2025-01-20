@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>KhuyenMai</div>;
+  return <section className="pt-24"></section>;
 }

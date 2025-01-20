@@ -51,3 +51,11 @@ export interface PromotionOption {
     typePromotion: TypePromotion,
     criteria?: PromotionCriteria
 }
+
+
+// Booking
+export type BookingInfo = {
+    phoneNumber: string,
+    idProduct: number,
+    date: Date
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookingForm } from "./booking-form";
 
 export default function InfoProduct({
   id,
@@ -27,23 +28,10 @@ export default function InfoProduct({
       <h3 className="text-2xl text-colorTextLogo ">
         Giá sản phẩm: {price.toLocaleString("vi-VN")} <sup>đ</sup>{" "}
       </h3>
-      <p className="text-gray-500 text-lg my-10">
+      <p className="text-gray-500 text-lg my-5">
         <span className="underline ">Mô tả:</span> {description}
       </p>
-      <div className="flex justify-around">
-        <button
-          className="inline-block w-2/5 border-2 border-colorForeground bg-colorForeground text-colorHighlight py-3 rounded-sm hover:bg-colorTextLogo hover:text-colorTextBlack hover:border-colorTextLogo duration-200"
-          type="button"
-        >
-          Đặt hàng
-        </button>
-        <button
-          className="inline-block w-2/5 border-2 border-colorTextLogo py-3 hover:bg-colorTextLogo duration-200"
-          type="button"
-        >
-          Liên hệ
-        </button>
-      </div>
+      <BookingForm id={id} />
     </div>
   );
 }
