@@ -9,7 +9,7 @@ import GroupProductItemSkeleton from "./skeleton/group-product-skeleton";
 export default function GroupListProduct({
   typeProduct,
 }: {
-  typeProduct?: TypeProduct;
+  typeProduct?: string;
 }) {
   const [typeSort, setTypeSort] = useState<TypeSort>(TypeSort.HightLight);
   const { data, isError, isLoading } = useProductFake(typeSort, typeProduct);

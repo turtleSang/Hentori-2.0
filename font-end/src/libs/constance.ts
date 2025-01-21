@@ -1,5 +1,5 @@
 import { faSquareFacebook, faInstagram, faFacebookMessenger, IconDefinition, } from "@fortawesome/free-brands-svg-icons";
-import { ItemIntro, LinkInfo, TypeLinkFooter, TypeProduct, TypeSort } from "./defination";
+import { Category, LinkInfo, TypeLinkFooter, TypeProduct, TypeSort } from "./defination";
 import { faLocationDot, faPhone, faArrowUpShortWide, faArrowUpWideShort } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
@@ -44,34 +44,34 @@ export const LISTSOCIAL = [
 
 export const LINKCAROUSEL = "https://sangnguyen1.sirv.com/hentori/1126(1).mp4";
 
-export const LISTINTROPRODUCT: ItemIntro[] = [
+export const LISTINTROPRODUCT: Category[] = [
     {
         name: "Suit",
         linkImg: "/intro-product/suit.jpg",
-        alt: "Suit tại Hentori Bespoke",
-        introLink: "/san-pham/suit",
-        typeProduct: TypeProduct.Suit
+        altImg: "Suit tại Hentori Bespoke",
+        link: "/san-pham/suit",
+        id: 1
     },
     {
         name: "Áo sơ mi",
         linkImg: "/intro-product/ao-so-mi.jpg",
-        alt: "Áo sơ mi tại Hentori Bespoke",
-        introLink: "/san-pham/so-mi",
-        typeProduct: TypeProduct.SoMi
+        altImg: "Áo sơ mi tại Hentori Bespoke",
+        link: "/san-pham/so-mi",
+        id: 2
     },
     {
         name: "Quần tây",
         linkImg: "/intro-product/quan-tay.jpg",
-        alt: "Quần tây tại Hentori Bespoke",
-        introLink: "/san-pham/quan-tay",
-        typeProduct: TypeProduct.QuanTay
+        altImg: "Quần tây tại Hentori Bespoke",
+        link: "/san-pham/quan-tay",
+        id: 3
     },
     {
         name: "Phụ Kiện",
         linkImg: "/intro-product/phu-kien.jpg",
-        alt: "Phụ kiện tại Hentori Bespoke",
-        introLink: "/san-pham/phu-kien",
-        typeProduct: TypeProduct.PhuKien
+        altImg: "Phụ kiện tại Hentori Bespoke",
+        link: "/san-pham/phu-kien",
+        id: 4
     }
 ]
 
@@ -120,7 +120,7 @@ export const dataCustomer: { name: string, link: string }[] = [
 
 const listLinkProduct = (): { name: string, link: string }[] => {
     return LISTINTROPRODUCT.map((val) => {
-        return { name: val.name, link: val.introLink }
+        return { name: val.name, link: val.link }
     })
 }
 const listLinkSocial = (): { name: string, link: string }[] => {

@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
-import { montserrat } from "./fonts/font";
-import NavBar from "@/layout/nav-bar";
-import FooterInfo from "@/layout/footer-info";
-
 export const metadata: Metadata = {
   title: "Hentori",
   description: "Âu phục tại Bình Dương",
@@ -26,12 +21,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className={`${montserrat.className}`} cz-shortcut-listen="false">
-        <NavBar />
-        {children}
-
-        <FooterInfo />
-      </body>
+      <body cz-shortcut-listen="false">{children}</body>
     </html>
   );
 }

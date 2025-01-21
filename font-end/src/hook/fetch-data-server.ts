@@ -1,5 +1,6 @@
-import { Category, DataProduct } from "@/libs/defination";
+import { Category, DataProduct, Promotion } from "@/libs/defination";
 
+// Product 
 
 const fakeData: DataProduct[] = [
     {
@@ -39,6 +40,19 @@ const fakeData: DataProduct[] = [
         point: 3
     }
 ]
+
+export const GetProduct = (id: number): Promise<DataProduct | undefined> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let data: DataProduct | undefined = fakeData.find((val) => val.id === id)
+            resolve(data);
+        }, 300)
+    })
+}
+
+
+
+// Customer Img
 
 export const dataCustomerImg: { name: string, link: string }[] = [
     {
@@ -91,31 +105,34 @@ export const CustomerImgFake = (): Promise<{ name: string, link: string }[]> => 
     })
 }
 
+
+// Category
+
 export const dataCategory: Category[] = [
     {
         id: 1,
-        link: "/suit",
+        link: "suit",
         name: "suit",
         altImg: "Hentori Suit",
         linkImg: "/intro-product/suit.jpg"
     },
     {
         id: 2,
-        link: "/so-mi",
+        link: "so-mi",
         name: "Sơ mi",
         altImg: "Hentori Sơ Mi",
         linkImg: "/intro-product/ao-so-mi.jpg"
     },
     {
         id: 3,
-        link: "/quan",
+        link: "quan-tay",
         name: "Quần Tây",
         altImg: "Hentori Quần",
         linkImg: "/intro-product/quan-tay.jpg"
     },
     {
         id: 4,
-        link: "/phu-kien",
+        link: "phu-kien",
         name: "Phụ kiện",
         altImg: "Hentori Suit",
         linkImg: "/intro-product/phu-kien.jpg"
@@ -126,18 +143,69 @@ export const getCategory = (): Promise<Category[]> => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(dataCategory)
-        }, 2000)
+        }, 2000);
     })
 }
 
-export const GetProduct = (id: number): Promise<DataProduct | undefined> => {
+
+
+// Promotion
+
+export const promotionFakeList: Promotion[] = [
+    {
+        id: 1,
+        description: "Khuyễn mãi tết giảm 20 % điều kiện bla bla",
+        startDate: new Date(),
+        name: "Sale 20%",
+        typePromotion: "percentage",
+        linkImgThumbPromotion: "/introduction/intro-1.jpg",
+        endDate: new Date("05/05/2025")
+    },
+    {
+        id: 2,
+        description: "Khuyễn mãi tết giảm 20 % điều kiện bla bla",
+        startDate: new Date(),
+        name: "Sale 20%",
+        typePromotion: "percentage",
+        linkImgThumbPromotion: "/introduction/intro-1.jpg",
+        endDate: new Date("05/05/2025")
+    },
+    {
+        id: 3,
+        description: "Khuyễn mãi tết giảm 20 % điều kiện bla bla",
+        startDate: new Date(),
+        name: "Sale 20%",
+        typePromotion: "percentage",
+        linkImgThumbPromotion: "/introduction/intro-1.jpg",
+        endDate: new Date("05/05/2025")
+    },
+    {
+        id: 4,
+        description: "Khuyễn mãi tết giảm 20 % điều kiện bla bla",
+        startDate: new Date(),
+        name: "Sale 20%",
+        typePromotion: "percentage",
+        linkImgThumbPromotion: "/introduction/intro-1.jpg",
+        endDate: new Date("05/05/2025")
+    },
+]
+
+
+export const getPromotion = (): Promise<Promotion[]> => {
+    return new Promise((resolve) => {
+        setTimeout(() => { resolve(promotionFakeList) }, 2000)
+    })
+}
+
+export const getDetailPromotion = (id: number): Promise<Promotion | undefined> => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            let data: DataProduct | undefined = fakeData.find((val) => val.id === id)
-            resolve(data);
-        }, 700)
+            const promotion = promotionFakeList.find((val) => {
+                return val.id == id;
+            })
+            resolve(promotion)
+        }, 2000);
     })
 }
-
 
 

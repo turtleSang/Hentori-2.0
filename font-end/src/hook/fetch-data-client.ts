@@ -42,13 +42,13 @@ const fakeData: DataProduct[] = [
     }
 ]
 
-export const DataProductFake = (typeSort?: TypeSort, typeProduct?: TypeProduct): Promise<DataProduct[]> => {
+export const DataProductFake = (typeSort?: TypeSort, typeProduct?: string): Promise<DataProduct[]> => {
     return new Promise((resolve) => {
         setTimeout(() => {
 
-            let listResult: { id: number, type: string, price: number, name: string, description: string, thumbImg: string, point: number }[] = fakeData.filter((val) => {
+            let listResult: DataProduct[] = fakeData.filter((val) => {
                 if (typeProduct) {
-                    return val.type === typeProduct.toString();
+                    return val.type === typeProduct;
                 }
                 return val;
             })
@@ -70,7 +70,7 @@ export const DataProductFake = (typeSort?: TypeSort, typeProduct?: TypeProduct):
 
 
 
-export const useProductFake = (typeSort?: TypeSort, typeProduct?: TypeProduct) => {
+export const useProductFake = (typeSort?: TypeSort, typeProduct?: string) => {
     const { data, error, isLoading } = useSWR([typeSort, typeProduct], () => DataProductFake(typeSort, typeProduct));
     return {
         data, isError: error, isLoading

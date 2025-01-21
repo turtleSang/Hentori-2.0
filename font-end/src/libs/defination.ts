@@ -45,12 +45,38 @@ export interface PromotionCriteria {
 }
 
 export interface PromotionOption {
-    id: string,
+    id: number,
     name: string,
     description: string,
     typePromotion: TypePromotion,
+    linkImgThumbPromotion: string,
+    startDate: Date,
+    endDate: Date,
     criteria?: PromotionCriteria
 }
+
+export class Promotion {
+    id: number;
+    name: string;
+    description: string;
+    typePromotion: TypePromotion;
+    linkImgThumbPromotion: string;
+    startDate: Date;
+    endDate: Date;
+    criteria?: PromotionCriteria;
+
+    constructor(option: PromotionOption) {
+        this.id = option.id;
+        this.name = option.name;
+        this.description = option.description;
+        this.typePromotion = option.typePromotion;
+        this.linkImgThumbPromotion = option.linkImgThumbPromotion;
+        this.startDate = option.startDate;
+        this.endDate = option.endDate;
+        this.criteria = option.criteria;
+    }
+}
+
 
 
 // Booking
