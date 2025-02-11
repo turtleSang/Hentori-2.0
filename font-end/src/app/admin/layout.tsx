@@ -5,7 +5,7 @@ export default function AdminLayout({
 }) {
   return (
     <>
-      <main style={{ padding: "20px" }}>{children}</main>
+      <main>{children}</main>
     </>
   );
 }

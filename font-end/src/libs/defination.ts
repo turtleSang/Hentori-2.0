@@ -20,17 +20,19 @@ export interface Category {
 }
 
 // Product
-export enum TypeProduct {
-    Suit = "suit",
-    SoMi = "so-mi",
-    QuanTay = "quan-tay",
-    PhuKien = "phu-kien"
-}
 
 export enum TypeSort {
     PriceLowToHigh = 1,
     PriceHighToLow = 2,
     HightLight = 0
+}
+
+export interface ProductCreateDto {
+    type: string,
+    price: number,
+    name: string,
+    description: string,
+    point: number
 }
 
 export type DataProduct = { id: number, type: string, price: number, name: string, description: string, thumbImg: string, point: number, listImg?: string[] }
@@ -40,7 +42,7 @@ export type TypePromotion = 'percentage' | 'fixed';
 
 export interface PromotionCriteria {
     amount?: number,
-    typeProduct?: TypeProduct[],
+    typeProduct?: string,
     product?: DataProduct[]
 }
 
@@ -76,9 +78,6 @@ export class Promotion {
         this.criteria = option.criteria;
     }
 }
-
-
-
 // Booking
 export type BookingInfo = {
     phoneNumber: string,

@@ -1,6 +1,6 @@
 "use client";
 import ProductItemNav from "@/components/product-item-nav";
-import { Category, TypeProduct } from "@/libs/defination";
+import { Category } from "@/libs/defination";
 
 export default function ProductNav({
   categoryList,

@@ -1,4 +1,4 @@
-import { DataProduct, TypeProduct, TypeSort } from "@/libs/defination";
+import { DataProduct, TypeSort } from "@/libs/defination";
 import useSWR from "swr";
 
 // Product
